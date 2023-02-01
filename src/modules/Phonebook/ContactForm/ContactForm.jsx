@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Formik, Form, Field } from 'formik';
 import css from './ContactForm.module.css';
 
-export const ContactForm = ({ addContact }) => {
+const ContactForm = ({ addContact }) => {
   const initialValues = {
     name: '',
     number: '',
@@ -12,6 +12,7 @@ export const ContactForm = ({ addContact }) => {
     addContact(values);
     resetForm();
   };
+
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit}>
       <Form className={css.form} autoComplete="off">
@@ -45,6 +46,8 @@ export const ContactForm = ({ addContact }) => {
     </Formik>
   );
 };
+
+export default ContactForm;
 
 ContactForm.propTypes = {
   addContact: PropTypes.func.isRequired,

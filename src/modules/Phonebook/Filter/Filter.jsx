@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { Formik, Form, Field } from 'formik';
 import css from './Filter.module.css';
 
-export const Filter = ({ value, onChange }) => {
+const Filter = ({ value, onChange }) => {
   const initialValues = {
     filter: '',
   };
@@ -33,6 +33,8 @@ export const Filter = ({ value, onChange }) => {
     </>
   );
 };
+
+export default Filter;
 
 Filter.propTypes = {
   value: PropTypes.string.isRequired,
